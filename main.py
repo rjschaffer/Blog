@@ -13,10 +13,10 @@ from flask_gravatar import Gravatar
 from typing import Callable
 from functools import wraps
 from sqlalchemy.ext.declarative import declarative_base
-
+import os # need this to get environment variable (secret_key)
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ['secret_key']
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
