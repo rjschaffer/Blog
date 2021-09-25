@@ -14,7 +14,7 @@ from functools import wraps
 import os # need this to get environment variable (secret_key)
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ['secret_key']
+app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
