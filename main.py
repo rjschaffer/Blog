@@ -1,5 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash, request, abort, g
-import flask
+from flask import Flask, render_template, redirect, url_for, flash, abort
 from flask_bootstrap import Bootstrap
 from flask_ckeditor import CKEditor
 from datetime import date
@@ -7,12 +6,11 @@ from sqlalchemy import ForeignKey
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
-from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
+from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 from typing import Callable
 from functools import wraps
-from sqlalchemy.ext.declarative import declarative_base
 import os # need this to get environment variable (secret_key)
 
 app = Flask(__name__)
